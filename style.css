@@ -121,4 +121,63 @@ select {
 
 @import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pr6n');
 
-/* style the radio input */
+/* CTA BTN */
+.btn {
+  background: #c65a48;
+  border: none;
+  height: 2.9rem;
+  width: 11rem;
+  border-radius: 50px;
+  padding: 0;
+  position: relative;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  width: 13rem;
+  height: 1.5px;
+  background: #333132;
+  left: -1rem;
+  transform: scaleX(0.15);
+  transform-origin: right;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+
+.btn > span {
+  display: block;
+  line-height: 0.8;
+  color: white;
+  font-size: 20px;
+  font-family: Corbel, sans-serif;
+  height: 1.9999rem;
+  width: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0rem;
+  transition: transform 0.2s ease;
+}
+
+.btn__top {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  top: 0.4rem;
+}
+
+.btn:hover .btn__top {
+  transform: translateY(-6px);
+}
+
+.btn__bot {
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  bottom: 0.5rem;
+}
+
+.btn:hover .btn__bot {
+  transform: translateY(6px);
+}
