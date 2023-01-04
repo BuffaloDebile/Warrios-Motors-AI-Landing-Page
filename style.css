@@ -141,7 +141,7 @@ select {
   left: -1rem;
   transform: scaleX(0.15);
   transform-origin: right;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease-in-out;
 }
 
 .btn:hover::before {
@@ -161,7 +161,7 @@ select {
   align-items: center;
   position: absolute;
   left: 0rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .btn__top {
