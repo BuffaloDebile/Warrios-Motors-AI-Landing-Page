@@ -59,53 +59,63 @@
   <link rel="stylesheet" href="style.css">
   <link rel="apple-touch-icon" href="touch-icon-iphone.png">
 
-  <script type="modules" src="app.js" defer></script>
+  <script type="module" src="app.js" defer></script>
 
 </head>
 
-<body class="selection:bg-Japan-red selection:text-white">
+
+<body class="selection:bg-Japan-red selection:text-white cursor-none">
+
+  <div id="cursor">
+    <div class="cursor--inner"></div>
+  </div>
+
+
+
   <!-- your content here... -->
   <header
     class=" bg-[url('ressources/template/edit/sm-YORITANAKA-BG.webp')] sm:bg-[url('ressources/template/edit/xl-YORITANAKA-BG.webp')] bg-contain bg-right-bottom sm:bg-right bg-no-repeat relative h-screen w-screen bg-Japan-white-yellow">
-    <main class="max-w-8xl mx-auto h-full px-10 sm:px-8 lg:px-20 xl:px-44">
+    <main class="max-w-8xl mx-auto h-full px-5 sm:px-8 lg:px-20 xl:px-44">
       <nav class="w-full pt-8">
-        <a href="#"><img class="w-auto h-12" src="ressources/template/edit/Logo-fast-motorcycle.png"
+        <a href="#"><img class="w-auto h-12 cursor-none" src="ressources/template/edit/Logo-fast-motorcycle.png"
             alt="Logo fast motorcycle"></a>
       </nav>
       <div class="content-container mt-9  sm:mt-24 w-full sm:w-2/5">
         <div class="text">
           <h2 class="text__signature font-Rage text-Japan-red text-4xl sm:text-6xl tracking-wide	leading-10">Signature
           </h2>
-          <h1 class="text__name  font-Corbel text-Japan-dark-gray text-5xl sm:text-7xl italic tracking-wider">SAILJAANI
+          <h1 class="text__name  font-Corbel text-Japan-dark-gray text-5xl sm:text-7xl italic tracking-wider">
+            SAILJAANI
           </h1>
           <h3 class="text__japanese font-Kozuka text-Japan-gray text-xl sm:text-3xl tracking-wide leading-snug">
             モータースポーツ<span class="tracking-[.25em]">ご長寿</span></h3>
-          <p class="text__description text-Poppins text-sm pt-4 font-thin leading-snug sm:leading-relaxed">
+          <p class="text__description text-Poppins text-xs sm:text-sm pt-4 font-thin leading-snug sm:leading-relaxed">
             Sailjaani zoomed
             through
             the
             streets on her
             cherry
             red
-            motorbike, a fierce Japanese warrior at the helm. She was known throughout the land for her speed and skill
+            motorbike, a fierce Japanese warrior at the helm. She was known throughout the land for her speed and
+            skill
             on the road. With her sword by her side and the wind in her hair, Sailjaani was unstoppable.</p>
         </div>
         <div class="color-picker mt-4 h-12">
 
           <div class="form-check gap-x-6">
             <input
-              class="form-check-input appearance-none rounded-full h-8 w-8  bg-Japan-red checked:bg-Japan-red checked:ring-[1.5px] ring-offset-4 ring-Japan-red ring-offset-Japan-white-yellow focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-4 cursor-pointer"
+              class="form-check-input appearance-none rounded-full h-8 w-8  bg-Japan-red checked:bg-Japan-red checked:ring-[1.5px] ring-offset-4 ring-Japan-red ring-offset-Japan-white-yellow focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-4 cursor-none"
               type="radio" name="flexRadioDefault" id="Sailjaani" checked>
             <label class="visually-hidden" for="Sailjaani">Sailjaani</label>
           </div>
 
           <input
-            class="form-check-input appearance-none rounded-full h-8 w-8  bg-Japan-gray checked:bg-Japan-gray checked:ring-[1.5px] ring-offset-4 ring-Japan-gray ring-offset-Japan-white-yellow focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+            class="form-check-input appearance-none rounded-full h-8 w-8  bg-Japan-gray checked:bg-Japan-gray checked:ring-[1.5px] ring-offset-4 ring-Japan-gray ring-offset-Japan-white-yellow focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-none"
             type="radio" name="flexRadioDefault" id="Yori-Tanaka">
           <label class="visually-hidden" for="Yori-Tanaka">Yori-Tanaka</label>
         </div>
 
-        <button class="btn mt-4 sm:mt-6">
+        <button class="btn mt-4 sm:mt-6 cursor-none">
           <span class="btn__top">Learn more</span>
           <span class="btn__bot">Learn more</span>
         </button>
@@ -117,7 +127,7 @@
 
   </header>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </body>
 
 </html>
