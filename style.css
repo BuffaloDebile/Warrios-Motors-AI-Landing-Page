@@ -44,6 +44,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: Poppins, Arial, sans-serif;
+  cursor: none;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -189,13 +190,12 @@ select {
   position: fixed;
   pointer-events: none;
   will-change: transform;
-  background-color: #000;
 }
 
 .cursor--inner.hovered {
   width: 70px !important;
   height: 70px !important;
-  color: #1d1919 !important;
+  color: #333132 !important;
   background: conic-gradient(
         from 165deg at top,
         #0000,
@@ -225,13 +225,13 @@ select {
       )
       right;
   background-size: 100% 50%, 50% 100%;
-  -webkit-mask: radial-gradient(circle 5px, #0000 90%, #000);
+  -webkit-mask: radial-gradient(circle 5px, #0000 90%, #333132);
   background-repeat: no-repeat;
-  animation: sh1 1.5s infinite linear !important;
+  animation: sh1 1.9s infinite linear !important;
   position: absolute;
   top: -33px !important;
   left: -33px !important;
-  transition: width 0.2s ease, height 0.2s ease, color 0.1s ease;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out, color 0.2s ease;
 }
 
 #cursor .cursor--inner {
@@ -273,6 +273,7 @@ select {
   position: absolute;
   top: -23px;
   left: -24px;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out, color 0.2s ease;
 }
 
 @keyframes sh1 {
