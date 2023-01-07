@@ -42,7 +42,6 @@ link.forEach((el) => {
 function switchWarrior() {
   const radioRed = document.querySelector('.form-check-input--red');
   const radioDark = document.querySelector('.form-check-input--dark');
-  const inputs = document.querySelectorAll('input');
 
   const textName = document.querySelector('.text__name');
   const textDescription = document.querySelector('.text__description');
@@ -54,11 +53,11 @@ function switchWarrior() {
     displayYori();
   }
 
-  inputs.forEach((input) => {
-    input.addEventListener('click', switchWarrior);
-  });
-
   function displaySailjaani() {
+    var audio = new Audio('ressources/template/edit/kawasaki-zx-10r.mp3');
+    audio.volume = 0.1;
+    audio.play();
+
     textName.textContent = 'SAILJAANI';
     textDescription.textContent =
       'Sailjaani zoomed through the streets on her cherry red motorbike, a fierce Japanese warrior at the helm. She was known throughout the land for her speed and skill on the road. With her sword by her side and the wind in her hair, Sailjaani was unstoppable.';
@@ -75,6 +74,9 @@ function switchWarrior() {
   }
 
   function displayYori() {
+    var audio = new Audio('ressources/template/edit/yamaha-xr-100.mp3');
+    audio.volume = 0.1;
+    audio.play();
     textName.textContent = 'YORI TANAKA';
     textDescription.textContent =
       "Yori Tanaka roared through the streets on his sleek black motorbike. As a skilled Japanese warrior, he was always ready for battle. But with the wind in his hair and the thrill of the ride, Yori couldn't help but feel alive. He was unstoppable, a force to be reckoned with, and nothing could stand in his way.";
@@ -91,4 +93,6 @@ function switchWarrior() {
   }
 }
 
-switchWarrior();
+document.querySelectorAll('input').forEach((input) => {
+  input.addEventListener('click', switchWarrior);
+});
