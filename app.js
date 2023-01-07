@@ -65,7 +65,7 @@ function switchWarrior() {
 
   function displaySailjaani() {
     var audio = new Audio('ressources/template/edit/kawasaki-zx-10r.mp3');
-    audio.volume = 0.08;
+    audio.volume = 0.1;
     audio.play();
 
     textName.textContent = 'SAILJAANI';
@@ -85,7 +85,7 @@ function switchWarrior() {
 
   function displayYori() {
     var audio = new Audio('ressources/template/edit/yamaha-xr-100.mp3');
-    audio.volume = 0.08;
+    audio.volume = 0.1;
     audio.play();
     textName.textContent = 'YORI TANAKA';
     textDescription.textContent =
