@@ -81,6 +81,8 @@ function switchWarrior() {
       "bg-[url('ressources/template/edit/sm-SAILJANI-BG.webp')]",
       "sm:bg-[url('ressources/template/edit/xl-SAILJANI-BG.webp')]",
     );
+
+    tl.restart();
   }
 
   function displayYori() {
@@ -101,6 +103,8 @@ function switchWarrior() {
       "bg-[url('ressources/template/edit/sm-YORITANAKA-BG.webp')]",
       "sm:bg-[url('ressources/template/edit/xl-YORITANAKA-BG.webp')]",
     );
+
+    tl.restart();
   }
 }
 
@@ -160,10 +164,6 @@ const cta = document.querySelector('.btn');
 
 const tl = new TimelineMax();
 
-tl.fromTo(logo, 0.8, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, '+=0.3');
-tl.fromTo(colorPicker, 0.3, { scaleY: 0 }, { scaleY: 1 });
-tl.fromTo(cta, 0.5, { opacity: 0, x: 60 }, { opacity: 1, x: 0 });
-
 tl.from(textSignature, 1.2, {
   y: 40,
   opacity: 0,
@@ -177,21 +177,25 @@ tl.fromTo(
   0.6,
   { yPercent: -100, opacity: 0 },
   { yPercent: 0, opacity: 1 },
-  '-=1',
+  '-=1.2',
 );
 
 tl.fromTo(
   textJapanese,
-  0.8,
+  0.7,
   { y: 20, opacity: 0 },
   { y: 0, opacity: 1 },
-  '-=0.4',
+  '-=0.5',
 );
 
 tl.fromTo(
   textDescription,
-  1,
+  0.7,
   { y: 10, opacity: 0 },
   { y: 0, opacity: 1 },
-  '-=0.7',
+  '-=0.8',
 );
+
+tl.fromTo(logo, 0.8, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, '-=0.8');
+tl.fromTo(colorPicker, 0.3, { scaleY: 0 }, { scaleY: 1 }, '-=1');
+tl.fromTo(cta, 0.5, { opacity: 0, x: 60 }, { opacity: 1, x: 0 }, '-=0.9');
