@@ -87,6 +87,7 @@ function switchWarrior() {
     var audio = new Audio('ressources/template/edit/yamaha-xr-100.mp3');
     audio.volume = 0.1;
     audio.play();
+
     textName.textContent = 'YORI TANAKA';
     textDescription.textContent =
       "Yori Tanaka roared through the streets on his sleek black motorbike. As a skilled Japanese warrior, he was always ready for battle. But with the wind in his hair and the thrill of the ride, Yori couldn't help but feel alive. He was unstoppable, a force to be reckoned with, and nothing could stand in his way.";
@@ -145,3 +146,52 @@ function toggleModal() {
   modal.classList.toggle('pointer-events-none');
   body.classList.toggle('modal-active');
 }
+
+// GSAP ANIMATION
+
+const logo = document.querySelector('.logo');
+const hero = document.querySelector('.header');
+const textName = document.querySelector('.text__name');
+const textDescription = document.querySelector('.text__description');
+const textJapanese = document.querySelector('.text__japanese');
+const textSignature = document.querySelector('.text__signature');
+const colorPicker = document.querySelector('.color-picker');
+const cta = document.querySelector('.btn');
+
+const tl = new TimelineMax();
+
+tl.fromTo(logo, 0.8, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, '+=0.3');
+tl.fromTo(colorPicker, 0.3, { scaleY: 0 }, { scaleY: 1 });
+tl.fromTo(cta, 0.5, { opacity: 0, x: 60 }, { opacity: 1, x: 0 });
+
+tl.from(textSignature, 1.2, {
+  y: 40,
+  opacity: 0,
+  ease: 'power4.out',
+  delay: -0.5,
+  skewY: 10,
+});
+
+tl.fromTo(
+  textName,
+  0.6,
+  { yPercent: -100, opacity: 0 },
+  { yPercent: 0, opacity: 1 },
+  '-=1',
+);
+
+tl.fromTo(
+  textJapanese,
+  0.8,
+  { y: 20, opacity: 0 },
+  { y: 0, opacity: 1 },
+  '-=0.4',
+);
+
+tl.fromTo(
+  textDescription,
+  1,
+  { y: 10, opacity: 0 },
+  { y: 0, opacity: 1 },
+  '-=0.7',
+);

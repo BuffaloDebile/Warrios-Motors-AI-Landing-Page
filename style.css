@@ -110,6 +110,12 @@ select {
 
 @import url('https://fonts.cdnfonts.com/css/kozuka-gothic-pr6n');
 
+/* GLOBAL STYLE  */
+
+.header {
+  animation: fade 1.3s ease-in-out;
+}
+
 /* CTA BTN */
 .btn {
   background: #c65a48;
@@ -306,6 +312,17 @@ select {
 @keyframes sh1 {
   100% {
     transform: rotate(1turn);
+  }
+}
+
+@keyframes fade {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
