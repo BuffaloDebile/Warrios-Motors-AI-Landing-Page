@@ -295,7 +295,7 @@ select {
   position: absolute;
   top: -23px;
   left: -24px;
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out, color 0.2s ease;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out, color 0.2s ease;
 }
 
 @keyframes grow {

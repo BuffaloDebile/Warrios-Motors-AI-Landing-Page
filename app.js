@@ -40,11 +40,15 @@ link.forEach((el) => {
 // grow cursor on click
 
 document.addEventListener('mousedown', () => {
-  shuriken.classList.add('cursorExpand');
+  if (shuriken.classList.contains('cursorExpand')) {
+    return;
+  } else {
+    shuriken.classList.add('cursorExpand');
 
-  setTimeout(() => {
-    shuriken.classList.remove('cursorExpand');
-  }, 430);
+    setTimeout(() => {
+      shuriken.classList.remove('cursorExpand');
+    }, 200);
+  }
 });
 
 // SWITCH BETWEEN WARRIORS
