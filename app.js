@@ -65,12 +65,14 @@ function switchWarrior() {
     displaySailjaani();
   } else if (radioDark.checked) {
     displayYori();
-  }
+  } else return;
 
   function displaySailjaani() {
-    var audio = new Audio('ressources/template/edit/kawasaki-zx-10r.mp3');
-    audio.volume = 0.1;
-    audio.play();
+    var audioSailjaani = new Audio(
+      'ressources/template/edit/kawasaki-zx-10r.mp3',
+    );
+    audioSailjaani.volume = 0.2;
+    audioSailjaani.play();
 
     textName.textContent = 'SAILJAANI';
     textDescription.textContent =
@@ -90,9 +92,9 @@ function switchWarrior() {
   }
 
   function displayYori() {
-    var audio = new Audio('ressources/template/edit/yamaha-xr-100.mp3');
-    audio.volume = 0.1;
-    audio.play();
+    var audioYori = new Audio('ressources/template/edit/yamaha-xr-100.mp3');
+    audioYori.volume = 0.2;
+    audioYori.play();
 
     textName.textContent = 'YORI TANAKA';
     textDescription.textContent =
@@ -112,7 +114,7 @@ function switchWarrior() {
   }
 }
 
-document.querySelectorAll('input').forEach((input) => {
+document.querySelectorAll('input.form-check-input').forEach((input) => {
   input.addEventListener('click', switchWarrior);
 });
 
@@ -202,3 +204,77 @@ tl.fromTo(colorPicker, 0.3, { scaleY: 0 }, { scaleY: 1 }, '-=1.5');
 tl.fromTo(cta, 0.5, { opacity: 0, x: 60 }, { opacity: 1, x: 0 }, '-=1.6');
 
 tl.play();
+
+// MUSIC PLAYER
+
+const audioPlayer = document.getElementById('audio-player');
+const playPauseButton = document.getElementById('play-pause');
+const playIcon = playPauseButton.querySelector('.fa-play');
+const pauseIcon = playPauseButton.querySelector('.fa-pause');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const volumeRange = document.getElementById('volume');
+const albumCover = document.getElementById('album-cover');
+
+let isPlaying = false;
+let currentTrack = 0;
+
+const tracks = [
+  {
+    src: 'ressources/template/edit/eevee-mist.mp3',
+    cover: 'ressources/template/edit/cover_evebeats.jpg',
+  },
+  {
+    src: 'ressources/template/edit/Country-Road-Japanese.mp3',
+    cover: 'ressources/template/edit/cover_country_road.jpg',
+  },
+  {
+    src: 'ressources/template/edit/Never-Gonna-Give-Up-Japanese.mp3',
+    cover: 'ressources/template/edit/Cover_never_gonna_giveup.jpg',
+  },
+];
+
+let audioFromPlayer = new Audio(tracks[currentTrack].src);
+audioFromPlayer.muted = false;
+albumCover.src = tracks[currentTrack].cover;
+
+playPauseButton.addEventListener('click', () => {
+  if (isPlaying) {
+    audioFromPlayer.pause();
+    playIcon.style.display = 'inline';
+    pauseIcon.style.display = 'none';
+    albumCover.style.animation = 'none';
+  } else {
+    audioFromPlayer.play();
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'inline';
+    albumCover.style.animation = 'spin 4s linear infinite';
+  }
+  isPlaying = !isPlaying;
+});
+
+prevButton.addEventListener('click', () => {
+  currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+  audioFromPlayer.src = tracks[currentTrack].src;
+  albumCover.src = tracks[currentTrack].cover;
+  audioFromPlayer.play();
+  playIcon.style.display = 'none';
+  pauseIcon.style.display = 'inline';
+  albumCover.style.animation = 'spin 4s linear infinite';
+  isPlaying = true;
+});
+
+nextButton.addEventListener('click', () => {
+  currentTrack = (currentTrack + 1) % tracks.length;
+  audioFromPlayer.src = tracks[currentTrack].src;
+  albumCover.src = tracks[currentTrack].cover;
+  audioFromPlayer.play();
+  playIcon.style.display = 'none';
+  pauseIcon.style.display = 'inline';
+  albumCover.style.animation = 'spin 4s linear infinite';
+  isPlaying = true;
+});
+
+volumeRange.addEventListener('input', () => {
+  audioFromPlayer.volume = volumeRange.value;
+});

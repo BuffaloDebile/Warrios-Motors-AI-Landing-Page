@@ -112,10 +112,6 @@ select {
 
 /* GLOBAL STYLE  */
 
-.header {
-  /* animation: fade ease-in-out; */
-}
-
 /* CTA BTN */
 .btn {
   background: #c65a48;
@@ -327,3 +323,69 @@ select {
 }
 
 /* audio player */
+#volume {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 5px;
+  background: #414042;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #f1ede2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#volume::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f1ede2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#volume:hover {
+  opacity: 1;
+}
+
+#album-cover {
+  position: relative;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#album-cover {
+  /* Add a white circle in the middle of the image */
+  background: radial-gradient(circle, white, transparent);
+  /* Center the circle within the image */
+  background-position: center;
+  /* Set the size of the circle to be slightly smaller than the image itself */
+  background-size: calc(100% - 4px);
+  /* Add some space around the image to make room for the circle */
+  padding: 2px;
+}
+
+#album-cover::after {
+  content: '';
+  display: block;
+  background: radial-gradient(circle, white, transparent);
+  background-position: center;
+  background-size: calc(100% - 4px);
+  padding: 2px;
+}
