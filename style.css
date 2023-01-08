@@ -113,7 +113,7 @@ select {
 /* GLOBAL STYLE  */
 
 .header {
-  animation: fade 1.3s ease-in-out;
+  /* animation: fade ease-in-out; */
 }
 
 /* CTA BTN */
@@ -225,16 +225,16 @@ select {
   position: absolute;
   top: -33px !important;
   left: -33px !important;
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out, color 0.2s ease;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out, color 0.2s ease;
 }
 
 .cursorExpand {
-  width: 50px !important;
-  height: 50px !important;
-  top: -25px !important;
-  left: -25px !important;
-  transition: all 0.6ss ease-in-out;
-  animation: grow 0.3s ease-in-out;
+  width: 40px !important;
+  height: 40px !important;
+  top: -19px !important;
+  left: -19px !important;
+  transition: all 0.2s ease-in-out;
+  animation: grow 0.2s ease-in-out;
   background: radial-gradient(
         150% 150% at left -40% top -40%,
         #0000 98%,
