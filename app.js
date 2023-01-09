@@ -71,7 +71,7 @@ function switchWarrior() {
     var audioSailjaani = new Audio(
       'ressources/template/edit/kawasaki-zx-10r.mp3',
     );
-    audioSailjaani.volume = 0.2;
+    audioSailjaani.volume = 0.1;
     audioSailjaani.play();
 
     textName.textContent = 'SAILJAANI';
@@ -93,7 +93,7 @@ function switchWarrior() {
 
   function displayYori() {
     var audioYori = new Audio('ressources/template/edit/yamaha-xr-100.mp3');
-    audioYori.volume = 0.2;
+    audioYori.volume = 0.1;
     audioYori.play();
 
     textName.textContent = 'YORI TANAKA';
@@ -235,8 +235,28 @@ const tracks = [
 ];
 
 let audioFromPlayer = new Audio(tracks[currentTrack].src);
+audioFromPlayer.volume = 0.2; // Set the volume to 0.1 by default
+volumeRange.value = 0.2; // Update the volume range to reflect the default volume
 audioFromPlayer.muted = false;
 albumCover.src = tracks[currentTrack].cover;
+
+// Automatically play the music player when the page loads
+audioFromPlayer.play();
+playIcon.style.display = 'none';
+pauseIcon.style.display = 'inline';
+isPlaying = true;
+albumCover.style.animation = 'spin 4s linear infinite';
+
+// Go to the next track when the current track ends
+audioFromPlayer.addEventListener('ended', () => {
+  currentTrack = (currentTrack + 1) % tracks.length;
+  audioFromPlayer.src = tracks[currentTrack].src;
+  albumCover.src = tracks[currentTrack].cover;
+  audioFromPlayer.play();
+  playIcon.style.display = 'none';
+  pauseIcon.style.display = 'inline';
+  albumCover.style.animation = 'spin 4s linear infinite';
+});
 
 playPauseButton.addEventListener('click', () => {
   if (isPlaying) {
