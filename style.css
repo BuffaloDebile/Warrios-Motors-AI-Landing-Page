@@ -380,13 +380,15 @@ select {
   padding: 2px;
 }
 
-#album-cover::before {
+.img-wrapper::before {
   content: '';
   display: block;
   /* Set the size of the second circle to be 5px wide */
-  width: 5px;
-  height: 5px;
-  background: white;
+  width: 25%;
+  z-index: 1;
+  height: 25%;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
   /* Center the circle within the image */
   position: absolute;
   top: 50%;

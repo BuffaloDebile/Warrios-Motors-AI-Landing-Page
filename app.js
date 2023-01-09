@@ -235,17 +235,18 @@ const tracks = [
 ];
 
 let audioFromPlayer = new Audio(tracks[currentTrack].src);
-audioFromPlayer.volume = 0.2; // Set the volume to 0.1 by default
-volumeRange.value = 0.2; // Update the volume range to reflect the default volume
+audioFromPlayer.volume = 0.1; // Set the volume to 0.1 by default
+volumeRange.value = 0.1; // Update the volume range to reflect the default volume
 audioFromPlayer.muted = false;
 albumCover.src = tracks[currentTrack].cover;
+albumCover.style.animation = 'none';
 
 // Automatically play the music player when the page loads
-audioFromPlayer.play();
-playIcon.style.display = 'none';
-pauseIcon.style.display = 'inline';
-isPlaying = true;
-albumCover.style.animation = 'spin 4s linear infinite';
+// audioFromPlayer.play();
+// playIcon.style.display = 'none';
+// pauseIcon.style.display = 'inline';
+// isPlaying = true;
+// albumCover.style.animation = 'spin 4s linear infinite';
 
 // Go to the next track when the current track ends
 audioFromPlayer.addEventListener('ended', () => {
