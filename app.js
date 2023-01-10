@@ -235,8 +235,8 @@ const tracks = [
 ];
 
 let audioFromPlayer = new Audio(tracks[currentTrack].src);
-audioFromPlayer.volume = 0.1; // Set the volume to 0.1 by default
-volumeRange.value = 0.1; // Update the volume range to reflect the default volume
+audioFromPlayer.volume = 0.2; // Set the volume to 0.1 by default
+volumeRange.value = 0.2; // Update the volume range to reflect the default volume
 audioFromPlayer.muted = false;
 albumCover.src = tracks[currentTrack].cover;
 albumCover.style.animation = 'none';
